@@ -86,11 +86,6 @@ Game.prototype.randomX = function(lmar, rmar) {
 
 Game.prototype.updateMissilePositions = function() {
   this.missiles.forEach(missile => missile.der.translateElement({x: missile.pos[0], y: missile.pos[1]}));
-  // for (missile in this.missiles) {
-  //   this.missiles[missile].el
-  //     .style({ left: this.missiles[missile].pos[0] + 'px'
-  //            , top: this.missiles[missile].pos[1] + 'px' });
-  // }
 }
 
 Game.prototype.tick = function() {
