@@ -1,0 +1,93 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>GM Missile Command 0.2</title>
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0"/>
+<script src="https://graspablemath.com/shared/libs/gmath/gm-inject.js"></script>
+<script src="https://graspablemath.com/shared/libs/analytics/gm-ga.js"></script>
+<script src="random.js"></script>
+<script src="levels.js"></script>
+<script src="main.js"></script>
+<style>
+body {
+  padding-top: 20px;
+  font-size: 15px;
+  color: gray;
+  font-family: monospace;
+}
+p { margin: 10px 0 !important;}
+h1.gm {
+  font-size: 18px;
+  font-weight: bold;
+  color: #444;
+  margin-bottom: 1em;
+  text-align: center;
+}
+div.game-on {
+  position: relative;
+  border: 1px solid silver;
+  margin: auto;
+  max-width: 900px;
+  height: 600px;
+}
+div#canvas-container {
+  background-color: rgba(0, 255, 0, 0.2);
+  position: absolute;
+  left: 20px;
+  width: 860px;
+  bottom: 20px;
+  height: 100px;
+}
+div.missile {
+  position: absolute;
+}
+div.center {
+  text-align: center;
+  margin: auto;
+  font-size: 15px;
+  color: gray;
+  font-family: monospace;
+}
+div.center .btn {
+  margin-top: 20px;
+  text-decoration: none;
+}
+div#info {
+  width: 900px;
+  margin: 10px auto;
+  margin-bottom: 30px;
+  font-size: 15px;
+  color: gray;
+  font-family: monospace;
+}
+a { text-decoration: underline }
+a.hidden-link { color: inherit; text-decoration: none; }
+a.hidden-link:hover { color: #23527c; text-decoration: underline; }
+</style>
+
+<body>
+  <h1 class='gm'>GM Missile Command 0.2</h1>
+  <div id='game-container'></div>
+  <div id='info'><span id='level'></span><span id='points'></span>
+  <span id='maxpoints'style='float:right'></span><span id='maxlevel' style='float:right'></span></div>
+  <div class=center>
+    <div>
+      <p>Match the expression to blast the incoming expressions.</p>
+      <p>Don't let any expressions hit your green zone.</a></p>
+      <p>Good luck!</p>
+    </div>
+    <div id='intro-btns'>
+      <button class='btn btn-default' id='start-game-btn'>Start</button>
+      <a role='button' href='../tutorial/index.html' target="_blank", class='btn btn-default'>Tutorial</a>
+      <p></p>
+      <p>New to <a class='hidden-link' href="https://graspablemath.com" target="_blank">Graspable Math</a>? Check out our <a class='hidden-link' href="https://graspablemath.com/tutorial/index.html" target="_blank">tutorial</a> first!</p>
+    </div>
+  </div>
+
+  <script>
+    var w = 900, h = 600; // dimensions of game container after classed w/ "main"
+    var mar = 20;
+    window.onload = function() {
+      loadGM(setup, { version: '0.14.3' })
+    }
+  </script>
+</body>
